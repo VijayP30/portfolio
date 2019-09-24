@@ -1,0 +1,53 @@
+body {
+    background-color:antiquewhite
+}
+#emma { 
+    background:black;
+    width:200px;
+    height:200px;
+    top:200px;
+    left:100px;
+    padding:10px;
+    
+}
+#runningone { 
+    background: #555;
+    padding:10px;
+    height:200px;
+}
+h1{
+    font-size:40; 
+}
+#bio{
+    color: #555;
+    border-radius:17px;
+    border-width:5px;
+    border-color: #555;
+    border-style:solid;
+    padding: 10px;
+}
+.navbar {
+    width: 100%;
+    background-color: #555;
+    overflow:auto;
+}
+#bannerimg {
+    width: 100%;
+    height: auto;
+}
+.navbar a {
+    float: left;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    width: 25%;
+    text-align:center;
+}
+navbar a:hover {
+    background-color: #000;
+}
+.navbar a:active {
+    background-color:firebrick;
+}
