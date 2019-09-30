@@ -11,7 +11,7 @@ body {
     
 }
 #runningone { 
-    margin-left:6px;
+    margin-left:4px;
     background: #555;
     padding:10px;
     height:200px;
@@ -46,7 +46,7 @@ h1{
     width: 25%;
     text-align:center;
 }
-navbar a:hover {
+.navbar a:hover {
     background-color: #000;
 }
 .navbar a:active {
@@ -65,4 +65,7 @@ navbar a:hover {
     padding: 10px;
     text-align: center;
     width:33%;
-    margin-left:400px;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+}
