@@ -1,0 +1,172 @@
+body {
+    background-color: antiquewhite
+}
+
+#emma {
+    background: #555;
+    width: 200px;
+    height: 200px;
+    top: 200px;
+    left: 100px;
+    padding: 10px;
+
+}
+#lightning {
+    background:#555;
+    width:200px;
+    height:200px;
+    top:300;
+    left:600;
+    padding:10px;
+}
+#runningone {
+    margin-left: 12px;
+    background: #555;
+    padding: 5px;
+    height: 200px;
+}
+
+h1 {
+    font-size: 40;
+}
+
+#bio {
+    color: #555;
+    border-radius: 17px;
+    border-width: 5px;
+    border-color: #555;
+    border-style: solid;
+    padding: 10px;
+}
+
+.navbar {
+    width: 100%;
+    background-color: #555;
+    overflow: auto;
+}
+
+#bannerimg {
+    width: 100%;
+    height: auto;
+}
+
+.navbar a {
+    float: left;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    width: 25%;
+    text-align: center;
+}
+
+.navbar a:hover {
+    background-color: #000;
+}
+
+.navbar a:active {
+    background-color: firebrick;
+}
+
+#homeheader {
+    color: #555;
+    text-align: center;
+}
+
+#home {
+    color: #555;
+    border-radius: 17px;
+    border-width: 5px;
+    border-color: #555;
+    border-style: solid;
+    padding: 10px;
+    text-align: center;
+    width: 33%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.box {
+    top:relative;
+    width: 50%;
+    margin: 1 rem;
+    padding: 10px;
+    color: #555;
+    font-size: .9rem;
+    font-weight: bold;
+    text-align: left;
+    border-width: 10px;
+    border-radius: 30px;
+    border-color: #555;
+    border-style: solid;
+    left: 250px;
+    top: -125;
+    font-family: 'Raleway', sans-serif;
+
+}
+
+.yellow-box {
+    position: absolute;
+    width: 8%;
+    margin: 1rem;
+    padding: 1rem;
+    border-color: red;
+    background-color: yellow;
+    border-width: 6px;
+    border-radius: 5px;
+    border-style: ridge;
+    font-size: .9rem;
+    font-weight: bold;
+    text-align: left;
+    top: 620px;
+    left: 80px;
+}
+
+.footer {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    top: 890px;
+    right: 0px;
+    border: 6px solid #555;
+}
+
+#toby {
+    width: 50%;
+    border-radius: 20px;
+    margin: 20px;
+}
+
+#tobymove {
+    margin-top: 10px;
+    text-align: center;
+}
+
+iframe {
+    padding-left:300px;
+    height: 425px;
+    width: 410px;
+}
+#emmad{
+    
+     color: #555;
+    border-radius: 17px;
+    border-width: 5px;
+    border-color: #555;
+    border-style: solid;
+    padding: 10px;
+    margin-top: -350px;
+    margin-left:300px
+}
+#lightningd{
+     color: #555;
+    border-radius: 17px;
+    border-width: 5px;
+    border-color: #555;
+    border-style: solid;
+    padding: 10px;
+    margin-top: 190px;
+    margin-left:300px
+}
