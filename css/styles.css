@@ -11,14 +11,16 @@ body {
     padding: 10px;
 
 }
+
 #lightning {
-    background:#555;
-    width:200px;
-    height:200px;
-    top:300;
-    left:600;
-    padding:10px;
+    background: #555;
+    width: 200px;
+    height: 200px;
+    top: 300;
+    left: 600;
+    padding: 10px;
 }
+
 #runningone {
     margin-left: 12px;
     background: #555;
@@ -89,7 +91,7 @@ h1 {
 }
 
 .box {
-    top:relative;
+    top: relative;
     width: 50%;
     margin: 1 rem;
     padding: 10px;
@@ -145,28 +147,49 @@ h1 {
 }
 
 iframe {
-    padding-left:300px;
+    padding-left: 300px;
     height: 425px;
     width: 410px;
 }
-#emmad{
-    
-     color: #555;
+
+#emmad {
+
+    color: #555;
     border-radius: 17px;
     border-width: 5px;
     border-color: #555;
     border-style: solid;
     padding: 10px;
-    margin-top: -350px;
-    margin-left:300px
+    margin-top: -575px;
+    margin-left: 300px
 }
-#lightningd{
-     color: #555;
+
+#lightningd {
+    color: #555;
     border-radius: 17px;
     border-width: 5px;
     border-color: #555;
     border-style: solid;
     padding: 10px;
     margin-top: 190px;
-    margin-left:300px
+    margin-left: 300px
+}
+#diced
+{
+    color: #555;
+    border-radius: 17px;
+    border-width: 5px;
+    border-color: #555;
+    border-style: solid;
+    padding: 10px;
+    margin-top: 190px;
+    margin-left: 300px
+}
+#dice {
+  background: #555;
+    width: 200px;
+    height: 200px;
+    top: 300;
+    left: 600;
+    padding: 10px;
 }
