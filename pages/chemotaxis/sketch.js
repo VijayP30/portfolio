@@ -1,11 +1,13 @@
 'use strict';
 
-var b = new Array();
-var i = 0;
+var b = [];
+//var i = 0;
 var score = 0;
+var canvas;
+var bool = false;
 
 function setup() {
-    createCanvas(1000, 1000);
+    canvas = createCanvas(1000, 1000);
     for (var i = 0; i < 501; i++) {
         b[i] = new Bacteria(width / 2, height / 2, 20);
     }
@@ -21,17 +23,17 @@ function draw() {
     for (var i = 0; i < b.length; i++) {
         b[i].bounce();
         b[i].show();
-//             if(mousePressed)
-//             {
-//               fill('#00ACFF');
-//               rect(mouseX+30,mouseY-30,10,4);
-//               if(mouseX>b[i].x-20 && mouseX<b[i].x+20 && mouseY>b[i].y-20 && mouseY<b[i].y+20)
-//               {
-//                 b[i]=new Bacteria(0,0,0);
-//                 score++;
-//                 console.log(score);
-//               }
-//             }
+        //             if(mousePressed)
+        //             {
+        //               fill('#00ACFF');
+        //               rect(mouseX+30,mouseY-30,10,4);
+        //               if(mouseX>b[i].x-20 && mouseX<b[i].x+20 && mouseY>b[i].y-20 && mouseY<b[i].y+20)
+        //               {
+        //                 b[i]=new Bacteria(0,0,0);
+        //                 score++;
+        //                 console.log(score);
+        //               }
+        //             }
     }
     b[0].killB();
     if (score >= 500) {
@@ -40,26 +42,39 @@ function draw() {
         fill('0');
         textSize(50);
         text("All Clean!", 400, 500);
-    }
 
-    function mousePressed() {
-        fill('#00ACFF');
-        rect(mouseX + 30, mouseY - 30, 10, 4);
-        if (mouseX > b[i].x - 20 && mouseX < b[i].x + 20 && mouseY > b[i].y - 20 && mouseY < b[i].y + 20) {
-            b[i] = new Bacteria(0, 0, 0);
-            score++;
-            console.log(score);
-        }
+    }
+    if (bool) {
+         fill('#00ACFF');
+       rect(mouseX-5,mouseY,10,4);
     }
 }
 
+
+function mousePressed() {
+    //    fill('#00ACFF');
+    //    rect(mouseX + 30, mouseY - 30, 10, 4);
+     bool = true;
+    for (var i = 0; i < b.length; i++) {
+        if (mouseX > b[i].x - 20 && mouseX < b[i].x + 20 && mouseY > b[i].y - 20 && mouseY < b[i].y + 20) {
+            b[i] = new Bacteria(-50,-50, 0);
+            score++;
+            console.log(score);
+        }
+
+    }
+}
+
+function mouseReleased() {
+    bool = false;
+}
 class Bacteria {
     //   private int x;
     //   private int y;
     //   private int radius;
     //   private int xvel;
     //   private int yvel;
-    constructor(x,y,radius) {
+    constructor(x, y, radius) {
         this.x = x;
         this.y = y;
         this.radius = radius;
@@ -81,7 +96,7 @@ class Bacteria {
     }
     killB() {
         fill('#FFFFFF');
-        triangle(mouseX, mouseY, mouseX + 25, mouseY, mouseX + 10, mouseY - 25);
-        rect(mouseX + 10, mouseY - 30, 20, 5);
+        triangle(mouseX-20,mouseY,mouseX-30,mouseY+30,mouseX-10,mouseY+30);
+    rect(mouseX-5,mouseY,-20,5);
     }
 }

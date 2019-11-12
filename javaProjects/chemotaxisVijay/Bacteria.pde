@@ -30,7 +30,7 @@
    }
   void killB()
   { fill(#FFFFFF);
-    triangle(mouseX,mouseY,mouseX+25,mouseY,mouseX+10,mouseY-25);
-    rect(mouseX+10,mouseY-30,20,5);
+    triangle(mouseX-20,mouseY,mouseX-30,mouseY+30,mouseX-10,mouseY+30);
+    rect(mouseX-5,mouseY,-20,5);
   }
  }   

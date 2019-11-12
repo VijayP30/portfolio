@@ -25,7 +25,7 @@ void draw()
      if(mousePressed)
      {
        fill(#00ACFF);
-       rect(mouseX+30,mouseY-30,10,4);
+       rect(mouseX-5,mouseY,10,4);
        if(mouseX>b[i].x-20 && mouseX<b[i].x+20 && mouseY>b[i].y-20 && mouseY<b[i].y+20)
        {
          b[i]=new Bacteria(0,0,0);
