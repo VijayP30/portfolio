@@ -160,7 +160,7 @@ iframe {
     border-color: #555;
     border-style: solid;
     padding: 10px;
-    margin-top: -575px;
+    margin-top: -825px;
     margin-left: 300px
 }
 
@@ -192,4 +192,23 @@ iframe {
     top: 300;
     left: 600;
     padding: 10px;
+}
+#chemotaxis {
+    background: #555;
+    width: 200px;
+    height: 200px;
+    top: 300;
+    left: 600;
+    padding: 10px;
+}
+#chemotaxisd 
+{
+    color: #555;
+    border-radius: 17px;
+    border-width: 5px;
+    border-color: #555;
+    border-style: solid;
+    padding: 10px;
+    margin-top: 190px;
+    margin-left: 300px
 }

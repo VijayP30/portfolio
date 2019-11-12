@@ -63,19 +63,19 @@ function draw() {
     text("" + count6, 85, 525);
 
     fill('#FFFFFF');
-    ellipse(473,200,5*total,5*total);
+    ellipse(473, 200, 5 * total, 5 * total);
     fill('#030303')
-    ellipse(473,200,5*(total/6),5*(total/6));
+    ellipse(473, 200, 5 * (total / 9), 5 * (total / 9));
     fill('#FFFFFF');
-    text("Total Compared To Avg:",360,50);
-    rect(170,525,50,-10*count1);
-    rect(230,525,50,-10*count2);
-    rect(290,525,50,-10*count3);
-    rect(350,525,50,-10*count4);
-    rect(410,525,50,-10*count5);
-    rect(470,525,50,-10*count6);
-    rect(160,530,370,3)
-    
+    text("Total Compared To Avg:", 360, 50);
+    rect(170, 525, 50, -10 * count1);
+    rect(230, 525, 50, -10 * count2);
+    rect(290, 525, 50, -10 * count3);
+    rect(350, 525, 50, -10 * count4);
+    rect(410, 525, 50, -10 * count5);
+    rect(470, 525, 50, -10 * count6);
+    rect(160, 530, 370, 3)
+
 
 }
 
