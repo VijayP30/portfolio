@@ -201,8 +201,7 @@ iframe {
     left: 600;
     padding: 10px;
 }
-#chemotaxisd 
-{
+#chemotaxisd {
     color: #555;
     border-radius: 17px;
     border-width: 5px;
@@ -211,4 +210,12 @@ iframe {
     padding: 10px;
     margin-top: 190px;
     margin-left: 300px
+}
+#trimesterone{
+        color: #555;
+    border-radius: 17px;
+    border-width: 5px;
+    border-color: #555;
+    border-style: solid;
+    padding: 10px;
 }
