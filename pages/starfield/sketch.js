@@ -1,10 +1,11 @@
 'use strict';
 
-var nprArray;
-var npArray;
+var nprArray=new Array();
+var npArray=new Array();
 var jb;
-var obArray;
-var obtArray;
+var obArray=new Array();
+var obtArray=new Array();
+
 function setup() {
     createCanvas(1000, 1000);
     for (var i = 0; i < 101; i++) {
@@ -23,7 +24,7 @@ function setup() {
 }
 
 function draw() {
-    background('0');
+    background(0);
     for (var i = 0; i < 101; i++) {
         nprArray[i].show();
         nprArray[i].move();
@@ -47,54 +48,85 @@ function draw() {
     fill(0);
     ellipse(50, 50, 25, 25);
     fill('#FF0000');
-    beginShape();
-    vertex(55, 45);
-    vertex(60, 60);
-    vertex(45, 55);
-    endShape();
+    triangle(55,45,60,60,45,55);
 
 }
-interface Particle {
+class Particle {
 
-    void move();
-    void show();
+    move()
+    {}
+    show()
+    {}
 
 }
+
+class OddballParticle extends Particle //uses an interface
+{
+    constructor() {
+        super();
+        this.x = 500;
+        this.y = 500;
+        this.speed = Math.random() * 20;
+        this.angle = (Math.PI * 5) * Math.random() * 6;
+    }
+    move() {
+        this.x += -(Math.tan(this.angle) * this.speed * 3);
+        this.y += Math.cos(this.angle) * this.speed;
+        this.angle += 0.15;
+
+        if (this.x > 999) {
+            this.x = 999;
+        } else if (this.x < 10) {
+            this.x = 10;
+        }
+
+        if (this.y > 999) {
+            this.y = 999;
+        } else if (this.y < 10) {
+            this.y = 10;
+        }
+    }
+    show() {
+        fill('255');
+        ellipse(Math.floor(this.x), Math.floor(this.y), 5, 5);
+    }
+}
+
 
 
 
 class JumboParticle extends OddballParticle //uses inheritance
 {
-    double x, y, angle, speed;
 
-    JumboParticle() {
-        x = width / 2;
-        y = height / 2;
-        speed = Math.random() * 20;
-        angle = (Math.PI * 5) * Math.random() * 6;
+    constructor() {
+        super();
+        this.x = 500;
+        this.y = 500;
+        this.speed = Math.random() * 20;
+        this.angle = (Math.PI * 5) * Math.random() * 6;
         //angle=(Math.PI/2)*Math.random();
     }
-    void move() {
-        x += Math.cos(angle) * speed;
-        y += (Math.sin(angle) * speed);
-        angle += .01;
+    move() {
+        this.x += Math.cos(this.angle) * this.speed;
+        this.y += (Math.sin(this.angle) * this.speed);
+        this.angle += .01;
 
-        if (x > 510) {
-            x = width / 2;
-        } else if (x < 490) {
-            x = width / 2;
+        if (this.x > 510) {
+            this.x = 500;
+        } else if (this.x < 490) {
+            this.x = 500;
         }
 
-        if (y > 510) {
-            y = width / 2;
-        } else if (y < 490) {
-            y = width / 2;
+        if (this.y > 510) {
+            this.y = 500;
+        } else if (this.y < 490) {
+            this.y = 500
         }
     }
 
-    void show() {
-        fill(255);
-        ellipse((int) x, (int) y, 50, 50);
+    show() {
+        fill('255');
+        ellipse(Math.floor(this.x), Math.floor(this.y), 50, 50);
     }
 
 }
@@ -102,43 +134,42 @@ class JumboParticle extends OddballParticle //uses inheritance
 
 class NormalParticleRed {
 
-    double x, y, speed, angle;
-    NormalParticleRed() {
-        x = 500;
-        y = height / 2;
-        speed = Math.random() * 5;
-        angle = (Math.PI * 2) * Math.random();
+    constructor() {
+        this.x = 500;
+        this.y = 500;
+        this.speed = Math.random() * 5;
+        this.angle = (Math.PI * 2) * Math.random();
         //angle=(Math.PI/2)*Math.random();
     }
 
-    void move() {
-        x += Math.tan(angle) * speed;
-        y += Math.tan(angle) * speed;
-        angle += 0.05;
-        if (x > 999) {
-            x = 750;
-        } else if (x < 0) {
-            x = 750;
+    move() {
+        this.x += Math.tan(this.angle) * this.speed;
+        this.y += Math.tan(this.angle) * this.speed;
+        this.angle += 0.05;
+        if (this.x > 999) {
+            this.x = 750;
+        } else if (this.x < 0) {
+            this.x = 750;
         }
 
-        if (y > 999) {
-            y = 750;
+        if (this.y > 999) {
+            this.y = 750;
 
-        } else if (y < 0) {
-            y = 750;
+        } else if (this.y < 0) {
+            this.y = 750;
         }
     }
 
-    void show() {
-        fill(#FF0000);
-        if (x <= 250)
-            ellipse((int) x, (int) y, 6, 6);
-        if (x > 250 && x < 500)
-            ellipse((int) x, (int) y, 5, 5);
-        if (x >= 500 && x < 750)
-            ellipse((int) x, (int) y, 4, 4);
-        if (x >= 750)
-            ellipse((int) x, (int) y, 3, 3);
+    show() {
+        fill('#FF0000');
+        if (this.x <= 250)
+            ellipse(Math.floor(this.x), Math.floor(this.y), 6, 6);
+        if (this.x > 250 && this.x < 500)
+            ellipse(Math.floor(this.x), Math.floor(this.y), 5, 5);
+        if (this.x >= 500 && this.x < 750)
+            ellipse(Math.floor(this.x), Math.floor(this.y), 4, 4);
+        if (this.x >= 750)
+            ellipse(Math.floor(this.x), Math.floor(this.y), 3, 3);
     }
 }
 
@@ -146,53 +177,54 @@ class NormalParticleRed {
 
 class NormalParticle {
     //your code here
-    double x, y, angle, speed;
-    int r, g, b;
-    int t = 0;
 
-    NormalParticle() {
-        x = width / 2;
-        y = height / 2;
-        speed = Math.random() * 20;
-        angle = (Math.PI * 5) * Math.random() * 6;
+    constructor() {
+        this.x = 500;
+        this.y = 500;
+        this.speed = Math.random() * 20;
+        this.angle = (Math.PI * 5) * Math.random() * 6;
+        this.r = 0;
+        this.g = 0;
+        this.b = 0;
+        this.t = 0;
         //angle=(Math.PI/2)*Math.random();
     }
-    void move() {
-        x += -(Math.cos(angle) * speed * 3);
-        y += (Math.sin(angle) * speed);
-        angle += .025;
+    move() {
+        this.x += -(Math.cos(this.angle) * this.speed * 3);
+        this.y += (Math.sin(this.angle) * this.speed);
+        this.angle += .025;
 
-        if (x > 999) {
-            x = 999;
-        } else if (x < 10) {
-            x = 10;
+        if (this.x > 999) {
+            this.x = 999;
+        } else if (this.x < 10) {
+            this.x = 10;
         }
 
-        if (y > 999) {
-            y = 999;
-        } else if (y < 10) {
-            y = 10;
+        if (this.y > 999) {
+            this.y = 999;
+        } else if (this.y < 10) {
+            this.y = 10;
         }
     }
 
-    void show() {
+    show() {
         noStroke();
-        if (t == 0) {
-            randomColor();
-            t = 300;
+        if (this.t == 0) {
+            this.randomColor();
+            this.t = 300;
         }
-        t++;
+        this.t = this.t + 1;
         //println(t);
         colorMode(HSB);
         //blendMode(LIGHTEST);
-        fill(r, g, b);
-        ellipse((int) x, (int) y, 3, 3);
+        fill(this.r, this.g, this.b);
+        ellipse(Math.floor(this.x), Math.floor(this.y), 3, 3);
     }
 
-    void randomColor() {
-        r = ((int)(Math.random() * 155 + 100));
-        g = ((int)(Math.random() * 155 + 100));
-        b = ((int)(Math.random() * 155 + 100));
+    randomColor() {
+        this.r = Math.floor((Math.random() * 155 + 100));
+        this.g = Math.floor((Math.random() * 155 + 100));
+        this.b = Math.floor((Math.random() * 155 + 100));
 
     }
 
@@ -201,70 +233,34 @@ class NormalParticle {
 
 
 
-class OddballParticle implements Particle //uses an interface
+class OddballParticleTwo extends Particle //uses an interface
 {
-    double x, y, angle, speed;
-
-    OddballParticle() {
-        x = width / 2;
-        y = height / 2;
-        speed = Math.random() * 20;
-        angle = (Math.PI * 5) * Math.random() * 6;
+    constructor() {
+        super();
+        this.x = 500;
+        this.y = 500;
+        this.speed = Math.random() * 20;
+        this.angle = (Math.PI * 5) * Math.random() * 6;
     }
-    void move() {
-        x += -(Math.tan(angle) * speed * 3);
-        y += Math.cos(angle) * speed;
-        angle += 0.15;
+    move() {
+        this.x += Math.tan(this.angle) * this.speed * 3;
+        this.y += Math.cos(this.angle) * this.speed;
+        this.angle += 0.15;
 
-        if (x > 999) {
-            x = 999;
-        } else if (x < 10) {
-            x = 10;
+        if (this.x > 999) {
+            this.x = 999;
+        } else if (this.x < 10) {
+            this.x = 10;
         }
 
-        if (y > 999) {
-            y = 999;
-        } else if (y < 10) {
-            y = 10;
+        if (this.y > 999) {
+            this.y = 999;
+        } else if (this.y < 10) {
+            this.y = 10;
         }
     }
-    void show() {
-        fill(255);
-        ellipse((int) x, (int) y, 5, 5);
-    }
-}
-
-
-
-class OddballParticleTwo implements Particle //uses an interface
-{
-    double x, y, angle, speed;
-
-    OddballParticleTwo() {
-        x = width / 2;
-        y = height / 2;
-        speed = Math.random() * 20;
-        angle = (Math.PI * 5) * Math.random() * 6;
-    }
-    void move() {
-        x += Math.tan(angle) * speed * 3;
-        y += Math.cos(angle) * speed;
-        angle += 0.15;
-
-        if (x > 999) {
-            x = 999;
-        } else if (x < 10) {
-            x = 10;
-        }
-
-        if (y > 999) {
-            y = 999;
-        } else if (y < 10) {
-            y = 10;
-        }
-    }
-    void show() {
-        fill(255);
-        ellipse((int) x, (int) y, 5, 5);
+    show() {
+        fill('255');
+        ellipse(Math.floor(this.x), Math.floor(this.y), 5, 5);
     }
 }
