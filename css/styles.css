@@ -160,7 +160,8 @@ iframe {
     border-color: #555;
     border-style: solid;
     padding: 10px;
-    margin-top: -1060px;
+    margin-top: -1280px;
+    
     margin-left: 300px
 }
 
@@ -171,7 +172,7 @@ iframe {
     border-color: #555;
     border-style: solid;
     padding: 10px;
-    margin-top: 190px;
+    margin-top: 200px;
     margin-left: 300px
 }
 
@@ -182,7 +183,7 @@ iframe {
     border-color: #555;
     border-style: solid;
     padding: 10px;
-    margin-top: 190px;
+    margin-top: 200px;
     margin-left: 300px
 }
 
@@ -211,7 +212,7 @@ iframe {
     border-color: #555;
     border-style: solid;
     padding: 10px;
-    margin-top: 190px;
+    margin-top: 210px;
     margin-left: 300px
 }
 
@@ -240,6 +241,24 @@ iframe {
     border-color: #555;
     border-style: solid;
     padding: 10px;
-    margin-top: 190px;
+    margin-top: 210px;
     margin-left: 300px
+}
+.parent{
+    display:flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    border:5px solid #42352c;
+    background: #555;
+    width: 200px;
+    height: 200px;
+    top: 200px;
+    left: 100px;
+    padding: 10px;
+}
+.child1{
+    flex-basis: 40%;
+    padding: 1 rem;
+    margin: 0.5%;
+    height:10%;
 }
