@@ -9,8 +9,8 @@ function setup() {
     createCanvas(1000, 1000);
     background('#D6D6D6');
     w = loadStrings("C:\\Users\\curio\\Desktop\\Portfolio\\javaProjects\\wordCloudVijay\\peterpan.txt");
-    s = join(w, " ");
-    words = splitTokens(s, ",.!?-\" ");
+    s = w.join(' ');
+    words = splitTokens(s, ',.!?-\" ');
     wList = new WordList(words);
 }
 
@@ -51,10 +51,10 @@ class WordList {
         this.myList = new ArrayList();
         for (this.w: tokens) {
             this.found = false;
-            for (Word x: this.myList) {
+            for (var x: this.myList) {
                 if (x.word.equals(w)) {
                     x.count++;
-                    found = true;
+                    this.found = true;
                 }
             }
             if (!this.found) {
